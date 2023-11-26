@@ -5,5 +5,7 @@
 
 #### Insert the following in application.properties
 
-* management.endpoints.web.exposure.include=health,info (this will make health , info routes visible)
-* management.endpoints.web.exposure.include=* (this will make all the routes visible)
+```java
+management.endpoints.web.exposure.include=health,info //(this will make health , info routes visible)
+management.endpoints.web.exposure.include=* //(this will make all the routes visible)
+```
