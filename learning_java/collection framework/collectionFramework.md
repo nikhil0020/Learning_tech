@@ -67,3 +67,27 @@ It defines several classes and interfaces which can be used a group of objects a
     * IdentityHashMap class
     * Hashtable class (Child of Dictionary abstract class)
         * Properties class
+
+    Duplicate keys are not allowed but values can be duplicated
+
+
+8. **SortedMap (I) :** - Child interface of Map  
+    If we want to represent a group of key value pairs according to some sorting order of keys then we shoul dgo for SortedMap.
+
+9. **NavigableMap (I) :** - Child of Sorted Map
+    * TreeMap is the implementation class
+
+
+    Sorting
+        1. Comparable (I)
+        2. Comparator (I)
+    
+
+    Cursors
+        1. Enumeration (I)
+        2. Iterator (I)
+        3. ListIterator (I)
+
+    Utility Classes
+        1. Collections
+        2. Arrays
