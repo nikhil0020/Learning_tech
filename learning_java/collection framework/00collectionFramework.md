@@ -91,3 +91,10 @@ It defines several classes and interfaces which can be used a group of objects a
     Utility Classes
         1. Collections
         2. Arrays
+
+
+![Collection](collection.png)
+
+![Map](map.png)
+
+
