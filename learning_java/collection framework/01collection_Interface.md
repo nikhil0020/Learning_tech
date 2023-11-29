@@ -58,3 +58,12 @@ Other method specific to List interface
 
     Usually we can use Collections to hold and transfer Objects from one place to another place, to provide support for this requires every Collection already implements Serializable and Clonable Interfaces.
 
+
+### RandomAccess(I)
+1. present in java.util
+2. ArrayList and Vector implements this interface
+3. It is a Marker Interface -> means it has no method
+
+
+
+![ArrayList vs Vector](./assets/arraylist_vs_vector.png)

@@ -93,8 +93,8 @@ It defines several classes and interfaces which can be used a group of objects a
         2. Arrays
 
 
-![Collection](collection.png)
+![Collection](./assets/collection.png)
 
-![Map](map.png)
+![Map](./assets/map.png)
 
 
