@@ -67,3 +67,23 @@ Other method specific to List interface
 
 
 ![ArrayList vs Vector](./assets/arraylist_vs_vector.png)
+
+
+
+### How to get Synchronized array list
+
+```java
+    ArrayList L1 = new ArrayList();
+
+    List L2 = Collection.synchronizedList(L1);
+
+    // L1 is not synchronized list
+    // L2 is synchronized list
+```
+
+    To make ArrayList synchronized we use Collection class method synchronizedList().
+    
+```java
+    public static List synchronizedList(List L);
+```
+
