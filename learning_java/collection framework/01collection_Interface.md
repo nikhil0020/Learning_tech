@@ -84,6 +84,67 @@ Other method specific to List interface
     To make ArrayList synchronized we use Collection class method synchronizedList().
     
 ```java
-    public static List synchronizedList(List L);
+public static List synchronizedList(List L);
 ```
 
+
+## Linked List
+
+1. Doubly Linked list
+2. Insertion order preserved
+3. Duplicates allowed
+4. Heterogeneous objects are allowed
+5. Null insertion is possible
+6. LinkedList implements serializable and cloneable interface but not RandomAccess interface.
+7. LinkedList is the best choice if frequent operation is insertion and deletion in the middle.
+8. LinkedList is worst choice if our frequent operation is retreival operation.
+
+### Methods available only to linked list
+
+```java
+void addFirst(Object o);
+void addLast(Object o);
+Object getFirst();
+Object getLast();
+Object removeFirst();
+Object removeLast();
+```
+
+### Constructors
+
+```java
+LinkedList l = new LinkedList(); // creates ab Empty LinkedList Object
+LinkedList l = new LinkedList(Collection c); // Create an equivalent LinkedList Object for the given Collection
+```
+
+### Difference between ArrayList and LinkedList
+
+|**ArrayList** |**LinkedList** |
+|:-------------|:--------------|
+|Best for retrieval | Best choice for insertion and deletion in middle |
+|Worst choice is insertion and deletion in middle | Worst choice for retrieval |
+|Resizable and growable array | Double LL |
+|Implements RandomAccess interface | Doesnot implements RandomAccess interface |
+
+
+
+## Stack Class
+
+1. Stack is child of vector
+2. LIFO order
+
+### Constructor
+
+```java
+Stack s = new Stack(); // Only one constructor
+```
+
+### Methods
+
+```java
+void push(Object o);
+Object pop(); // return and remove top of stack
+Object peek(); // return top of the stack
+Boolean empty(); // to check if stack is empty or not
+int search(Element e); // return offset of the element (offset means at which position from top the element is located), if element is not present then it will return -1
+```
