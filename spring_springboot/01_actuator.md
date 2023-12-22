@@ -1,7 +1,7 @@
 ## How to use actuator 
 
 * by default only /health route is visible , other routes are hidden.
-* To see difference routes , change the application.properties files
+* To see different routes , change the application.properties files
 
 #### Insert the following in application.properties
 
