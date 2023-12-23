@@ -9,6 +9,9 @@
 management.endpoints.web.exposure.include=health,info //(this will make health , info routes visible)
 // management.endpoints.web.exposure.include=* //(this will make all the routes visible)
 management.info.env.enabled=true
+
+// to exclude endpoints we can do
+management.endpoints.web.exposure.exclude=health,info
 ```
 
 ```java
@@ -20,5 +23,16 @@ info.app.name = Multiverse
 info.app.description = Welcome to the multiverse
 info.app.version = 1.0.0
 ```
+
+
+### Adding security to endpoints
+
+Development process
+* Edit pom.xml and add spring-boot-starter-security.    
+* Verify security on actuator endpoints for: /beans etc.
+* Disable endpoints for example - /health or /info etc.
+
+
+
 
 
