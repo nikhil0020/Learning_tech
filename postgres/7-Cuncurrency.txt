@@ -1,0 +1,5 @@
+// Concurrency
+
+*   Databases are designed to accept SQL Commands from a variey of
+    sources simultaneously and make them atomically.
+

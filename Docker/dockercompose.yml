@@ -1,0 +1,52 @@
+# yaml files are composed of maps and list
+# indentaion matters
+# Always use space not TABS
+
+# docker compose containers
+
+# Version - It shows what version we are using for docker compose 
+version: '3.7'
+
+# * key service configuration options 
+# build
+# environment
+# image
+# networks
+# ports
+# volumes
+# **********************************************************************
+
+# * Key docker compose Build properties
+# context
+# dockerfile
+# args
+# image
+
+# Define any args used in the Dockerfile during the build process
+# *******************************************************************************************************
+
+
+
+services:
+ node:
+  container_name: nodeapp
+  image: nodeapp
+  build:
+   context: .
+   dockerfile: node.dockerfile
+  ports:
+   - "3000:3000"
+  networks:
+   - nodeapp-network
+  volumes:
+   - ./logs:/var/www/logs
+  depends_on:
+   - mongodb
+ mongodb:
+  container_name: mongodb
+  image: mongo
+  networks:
+   - nodeapp-networks
+  
+
+

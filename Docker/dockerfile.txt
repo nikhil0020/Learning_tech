@@ -1,0 +1,157 @@
+
+FROM node:alpine
+
+LABEL author="Nikhil Singh"
+
+ENV NODE_ENV="production"
+
+WORKDIR /var/www
+
+COPY . .
+
+# . or ./ are same 
+# First dot represent source and second represent destination
+
+RUN npm install
+
+EXPOSE 3000
+
+ENTRYPOINT [ "node" ,"server.js" ]
+# Server 
+
+
+# * if you want to ignore some files or folders mention them in .dockerignore file
+# just like git ignore
+
+
+# * Docker build
+
+# * docker build -t <name> .
+# * docker build -t <registry>/<name>:<tag> .
+
+
+# registry is docker registry name 
+# -t stand for tag which is version
+# name is the name of our image
+# . is used for path where it will find our dockerfile
+
+# * docker images
+# This command will list all the images
+
+# * docker rmi <imageId>
+# this command will remove an image
+
+# * Dockerfile is specific name but if we want a name of our choice then we have to mention it using -f flag with PATH/<dockerfilename>
+
+# Deploying image to docker hub
+# * docker push <user name>/<image name>:<tag>
+
+
+# For running a container we need an image so for that we will do 
+# * docker pull <imagename> when image is not on local
+
+# * docker run -p <externalPort>:<internalPort> <imageName>
+
+# internal port where docker image is listening 
+# external port where user will listen
+
+# * docker ps -> to see running containers
+
+# * docker ps -a   -> to see all the images that are not running
+
+# to stop an image we can use -> docker stop <imageName>
+
+# to remove an image we can use -> docker rmi <imageName>
+
+# imageName and imageId both can be used to perform operations
+# imageID is a better choice as it's unique
+
+# * docker logs <containerID> -> for logs of a container
+
+
+# To store data outside of the container
+
+
+# we can use container volumes
+# * docker run -p <ports> -v /var/www/logs <imagesToRun>
+# -v tag for volumes 
+# /var/www/logs is the folder where all logs were stored 
+# So now the command says data in folder should be stored on the container host(which is local os)
+
+
+# * docker run -p <ports> -v $(pwd):/var/www/logs <imagesToRun>
+# pwd stands for print working directory in mac/linux , so if i want this file at my location then i can use this command
+# PWD for windows
+
+
+# * Create a container volume
+
+# * docker run -p 8080:80 -v $(pwd):/usr/share/nginx/html <imagesToRun>
+# This command will say that don't use default nginx html page use our current directory as nginx default page
+
+
+# * docker run -p 8080:80 -v $(pwd)/logs:/var/www/logs <imagesToRun>
+# this will set our logs in a folder called logs on our current working directory
+
+
+# Communicating b/w multiple containers
+
+# using a bridge network to communicate b/w container on same machine 
+
+# * docker network create --driver bridge isolated_network 
+# docker network create -> this will create a network
+# --driver bridge -> Define driver to use 
+# isolated_network -> Network name(can be any name)
+
+# * docker network ls
+# to list network
+
+# * docker network rm [network]
+# to remove a network
+
+# Connecting database to the network (this network is local)
+# * docker run -d --net=isolated_network --name=mongodb mongo
+# --net=isolated_network -> Bridge network to use
+# --name=mongodb -> Database container name
+# mongo is the name of the image , we haven't specified the ports because mongo has very specific port to use
+
+
+# * docker run -d -p 3000:3000 --net=isolated_network --name=nodeapp imageName
+# * docker run -d -p 3000:3000 --net=isolated_network --name=nodeapp -v $(pwd)/logs:/var/www/logs nikhil0170/nodeapp
+
+# * docker network inspect <imageID>
+
+
+# Shell into a container 
+
+# Using docker exec to Shell into a Container
+
+# * docker exec -it <containerID> sh
+
+# -it for interactive tty 
+# sh is shell to use , we can use bash etc
+
+# We have use shell into a container because if we want to run some commands then we have to connect a shell to a container
+
+# Docker compose features
+# 1 - Define services using yaml configuration
+# 2 - Build one or more images
+# 3 - start and stop services
+# 4 - view the status of running services 
+# 5 - Stream the log output of running services
+
+# Docker compose workflow
+
+# build services -> start up services -> Tear Down services 
+
+# * docker-compose build -> to build one or more images
+# * docker-compose up
+# * docker-compose down 
+
+# indentation matter in a yaml file
+# docker-compose.yml is a sample yml file used 
+
+
+# if docker compose file name is different from default name then we can use -f tag to specify the path
+
+

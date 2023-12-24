@@ -1,0 +1,67 @@
+// SEMI-COLON at the end in necessary
+
+SQL : INSERT INTO A table
+
+=> INSERT INTO <table name> (field1 , field2,...) VALUES ('val1' , 'val2',...);
+
+SQL : DELETE FROM A TABLE
+
+=> DELETE FROM <table name> WHERE email='<some email>';
+
+SQL : UPDATE
+
+=> UPDATE <table name> SET name='Nikhil' WHERE email='code.nikhil21@gmail.com'>
+
+SQL : SELECT
+
+=> SELECT * FROM <table name>
+
+SQL : DROP
+
+=> DROP TABLE <table name>;
+
+
+// LIKE clause
+// We can do wildcard matching in a WHERE clause using the LIKE operator
+
+=> SELECT * FROM <table name> WHERE name LIKE '%e%';
+
+// LIMIT/OFFSET clause - Used in pagination very often
+
+// WHERE and ORDER BY clauses happen *before* the LIMIT/OFFSET are applied.
+// OFFSET starts from row 0
+
+Example queries - 
+=> SELECT * FROM <table name> ORDER BY email DESC LIMIT 5;
+=> SELECT * FROM <table name> ORDER BY email OFFSET 3 LIMIT 10;
+
+// counting row with SELECT
+
+=> SELECT COUNT(*) FROM <table name>;
+
+
+
+SOME DATA TYPES FOR postgresSQL
+
+1 - STRING fields
+    * CHAR(n)
+    * VARCHAR(n)
+
+2 - Text field
+    * TEXT - varying length not used for indexing or sorting
+
+3 - INTEGER NUMBERS
+    * SMALLINT(-32768,+32768)
+    * INTEGER(2 billion)
+    * BIGINT(10 ^ 18)
+
+4 - FLOATING POINT NUMBERS
+    * REAL
+    * DOUBLE PRECISION
+    * NUMERIC(accuracy,decimal)
+
+5 - DATES
+    * TIMESTAMP
+    * DATE
+    * TIME
+    * Built-in postgresSQL function NOW()

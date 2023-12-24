@@ -1,0 +1,33 @@
+Commands
+
+
+// Creating User and database
+
+=> Creating User
+    CREATE USER nikhil WITH PASSWORD 'secret';
+//  password should be in single quotes
+
+=> Creating database
+    CREATE DATABASE todo WITH OWNER 'nikhil';
+
+=> Connect to a database with a User
+    psql todo nikhil
+    todo is a database
+    nikhil is a User
+
+=# means a super user prompt
+=> means a normal user prompt
+
+1-  List all database in postgresSQL
+    command => "\l"
+
+2-  Move inside a database
+    command => "\c"
+
+3-  Show table in database
+    command => "\dt"
+
+4-  Show schema of a table
+    command => "\d + <table name>"
+
+

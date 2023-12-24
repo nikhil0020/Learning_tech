@@ -1,0 +1,19 @@
+// A query within an query
+
+=> SELECT content FROM comment
+    WHERE account_id = (SELECT id FROM account WHERE email='ed@umich.edu');
+
+// Perform below query using a Sub-query
+
+=> SELECT COUNT(abbrev) AS ct , abbrev FROM pg_timezone_names
+    WHERE is_dst='t' GROUP BY abbrev HAVING COUNT(abbrev) > 10;
+
+Sub-Query for above query
+
+=> SELECT ct , abbrev FROM 
+    (
+        SELECT COUNT(abbrev) AS ct , abbrev
+        FROM pg_timezone_names
+        WHERE is_dst='t' GROUP BY abbrev
+    ) AS zap
+    WHERE ct > 10;

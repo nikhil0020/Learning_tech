@@ -1,0 +1,24 @@
+// create table in SQL
+
+/* 
+
+CREATE TABLE users(
+    id SERIAL,
+    name VARCHAR(128),
+    email VARCHAR(128) UNIQUE,
+    PRIMARY KEY(id)
+);
+
+here id will auto increment;
+id is unique and also primary key
+
+*/
+
+// INDEXES
+
+*   As a table gets large ,scanning all the data to find a single row 
+    becomes very costly
+*   There are techniques to greatly shorten the scan as long as you 
+    create data structure and maintain those structures - like shortcuts
+*   Hashes and trees are the most common
+*   B trees
