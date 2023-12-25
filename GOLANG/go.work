@@ -1,0 +1,5 @@
+go 1.18
+
+use ./11structs
+use ./23mymods
+use ./24buildapi
