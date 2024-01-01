@@ -44,7 +44,7 @@ spring.main.lazy-initialization=true
 
 
 Advantages
-* Only create object as sneeded.
+* Only create object as needed.
 * May help with faster startup time if you have large number of components.
 
 Disadvantages

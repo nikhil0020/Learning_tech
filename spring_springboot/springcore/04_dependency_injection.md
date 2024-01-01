@@ -28,7 +28,7 @@ The client delegates to another object the responsibility of providing its depen
 
 ### What is Spring AutoWiring
 
-* For dependency injection, Spring can use autowwiring.
+* For dependency injection, Spring can use autowiring.
 
 * Spring will look for a class that matches
     * matches by type: class or interface
