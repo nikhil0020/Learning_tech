@@ -1,3 +1,5 @@
+## Reading
+
 #### Step 1: Define a methond in DAO interface
 
 ```java
@@ -115,7 +117,7 @@ public List<Student> findByLastName(String theLastName) {
 ```
 
 
-## Development process
+#### Development process
 
 1. Add new method to DAO interface.
 2. Add new method to DAO implementation.
@@ -196,7 +198,7 @@ public class CruddemoApplication {
 }
 ```
 
-### Update
+## Update
 
 ```java
 Student theStudent = entityManager.find(Student.class,1);
@@ -212,3 +214,115 @@ entityManager.merge(theStudent); // This will update the entity
 ```java
 int numRowsUpdated = entityManager.createQuery("UPDATE Student SET lastName='Testter'").executeUpdate();
 ```
+
+#### Step 1: Add new method to DAO interface
+
+
+```java
+import com.nikhil.cruddemo.entity.Student;
+
+public interface StudentDAO{
+    void save(Student theStudemt);
+    Student findById(Integer id);
+    List<Student> findAll();
+    void update(Student theStudent);
+}
+```
+
+
+
+#### Step 2: Add new method to DAO implementation
+
+
+
+```java
+import com.nikhil.cruddemo.entity.Student;
+import jakarta.persistence.EntityManager;
+
+@Repository
+public class StudentDaoImpl implements StudentDAO{
+
+    private EntityManager entityManager;
+
+    @AutoWired
+    public StudentDAOImpl(EntityManager theEntityManager){
+        entityManager = theEntityManager;
+    }
+
+    // ...
+    // other methods
+    // ...
+
+    @Override
+    @Transactional
+    public void update(Student theStudent){
+      entityManager.merge(theStudent);
+    }
+}
+// here we are adding @Transactional annotation since we are performing update.
+```
+
+
+#### Step 3: Update main app
+
+
+
+```java
+public class CruddemoApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(CruddemoApplication.class, args);
+	}
+
+	@Bean
+	public CommandLineRunner commandLineRunner(StudentDAO studentDAO){
+		return runner -> {
+		  updateStudent(studentDAO);
+		};
+	}
+
+  private void updateStudent(Student studentDAO){
+    // retrieve student based on the id: primary key
+
+    int studentId = 1;
+    System.out.println("Getting student with id: " + studentId);
+
+    Student myStudent = studentDAO.findById(studentId);
+
+    System.out.println("Updating student...");
+
+    // change first name to "Ram"
+
+    myStudent.setFirstName("Ram");
+    studentDAO.update(myStudent);
+
+  }
+}
+```
+
+## Deleting an object
+
+
+```java
+// retrieve the student
+
+int id = 1;
+Student theStudent = entityManager.find(Student.class,id);
+
+// delete the student
+entityManager.remove(theStudent);
+```
+
+#### Delete based on condition
+
+```java
+int numRowsDeleted = entityManager.createQuery("DELETE FROM Student WHERE lastName='Smith'").executeUpdate();
+
+// We can see for delete and update we are using executeUpdate() method, it basically means we are modifying something 
+
+```
+
+#### Development process is same as Update
+  1. Create a method in DAO interface
+  2. Add new method to DAO implementation.
+  3. update main app
