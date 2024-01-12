@@ -47,7 +47,7 @@ public class StudentDaoImpl implements StudentDAO{
 * Spring provide this annotation
 * It comes under @Component
 * Specialized annotation for repositories
-* Supports componenet scanning
+* Supports component scanning
 
 ```java
 public class CruddemoApplication {

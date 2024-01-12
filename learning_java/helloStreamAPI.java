@@ -18,3 +18,4 @@ public class helloStreamAPI {
         nums.stream().filter(predicate).sorted().map(n -> n*2).forEach(n -> System.out.println(n));
     }
 }
+
