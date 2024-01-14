@@ -22,11 +22,11 @@
 * Need to define a custom student exception class.
   * StudentNotFoundException
 
-![Custom Exception](assets/custom_exception.png)
+![Custom Exception](../assets/custom_exception.png)
 
 #### STEP 3: Update rest service to throw exception
 
-![Rest Exception](assets/update_rest_exception.png)
+![Rest Exception](../assets/update_rest_exception.png)
 
 #### STEP 4: Add exception handler method
 
@@ -36,9 +36,9 @@
 * ResponseEntity provides fine-grained control to specify:
   * HTTP status code, HTTP headers and Response Body.
 
-![ExceptionHandler method 1](assets/exceptionHandlerMethod1.png)
+![ExceptionHandler method 1](../assets/exceptionHandlerMethod1.png)
 
-![ExceptionHandler method 2](assets/exceptionHandlerMethod2.png)
+![ExceptionHandler method 2](../assets/exceptionHandlerMethod2.png)
 
-![ExceptionHandler method 3](assets/exceptionHandlerMethod3.png)
+![ExceptionHandler method 3](../assets/exceptionHandlerMethod3.png)
 
