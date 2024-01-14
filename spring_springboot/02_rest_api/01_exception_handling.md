@@ -12,7 +12,7 @@
 * We will define as Java class (POJO)
 * Jackson will handle converting it to JSON.
 
-![Error Response](assets/error_response.png)
+![Error Response](../assets/error_response.png)
 
 
 #### STEP 2: Create a custom exception class
