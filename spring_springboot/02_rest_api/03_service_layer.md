@@ -18,3 +18,5 @@
 ![Step 1 : Define service interface](../assets/step1_serviceLayer.png)
 
 ![Step 2 : Define service implementation](../assets/step2_serviceLayer.png)
+
+![Service Layer Best Practices](../assets/serviceLayer_bestPractice.png)
