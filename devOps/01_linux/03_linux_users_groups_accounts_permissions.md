@@ -76,11 +76,41 @@ SHELL : Absolute path of a SHELL
 
 #### Different User and Group commands
 
-| adduser , addgroup | useradd , groupadd |
-| ------------------ | ------------------ |
-| Interactive        |                    |
-| More user Friendly |                    |
+| adduser , addgroup , deluser, delgroup | useradd , groupadd, userdel, groupdel |
+| -------------------------------------- | ------------------------------------- |
+| Interactive                            |                                       |
+| More user Friendly                     |                                       |
 
 #### how to change primary group of a user
 
 - usermod [OPTIONS] <username> = Modify a user Account
+- sudo usermod -g devops ninja
+- the above command with make devops the primary group of user ninja
+- now we can delete group ninja because its no longer needed.
+- we can use **delgroup** or **groupdel** command
+- Ex - sudo delgroup ninja
+
+#### we can add a user to multiple groups
+
+- In addition to one primary group , a user can be part of multiple secondary group.
+
+**How to add user to multiple groups**
+
+- sudo usermod -G admin,othergroup ninja
+- G option will override the existing groups.
+- If we want to add user to other group with overriding them , we can use -a flag ( a = append )
+- sudo usermod -aG newgroup ninja
+
+#### how to check a user belongs to which group
+
+- we can use groups command
+
+* Ex - groups = this will print all the groups of the current user.
+* To print groups of other users we have to use **groups \<username\>**
+* Ex - groups ninja
+
+#### Delete user from specified group
+
+- sudo gpasswd -d ninja devops
+- above command will remove user ninja from group devops
+
