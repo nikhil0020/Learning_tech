@@ -50,3 +50,7 @@ Standard Input and Standard Output
   - STDERR (2) = Standard Error
 
 * We pipe or redirect the standard output from one command to the standard output of another command.
+
+#### We can execute multiple commands on a single line using semi colon seperated commands.
+
+- Ex => clear; sleep 1; echo "Hello world"
