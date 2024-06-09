@@ -300,5 +300,5 @@ func main() {
 	// SyncOnce()
 	// CancellingRequest()
 	// DeadlineReachedRequest()
-	ProvidingRequestData()
+	// ProvidingRequestData()
 }
