@@ -398,3 +398,8 @@ func main() {
 }
 // Removing an Assertion in the main.go File in the composition Folder
 ```
+
+* A value of any type that implements the Describable interface must have a Price method because of the composition performed
+
+* which means the method can be called without a potentially risky type assertion.
+
