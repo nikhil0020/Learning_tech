@@ -350,3 +350,5 @@ func CheckingWhetherFileExist() {
 * An alternative to using patterns is to enumerate all the files in a specific location, which can be done using the function which is defined in the path/filepath package.
 
 ![](./assets/function_provided_by_path_filepath_package.png)
+
+* The callback function invoked by WalkDir receives a string that contains the path, a DirEntry value that provides details about the file or directory, and an error that indicates problems accessing that file or directory. The result of the callback function is an error that prevents the WalkDir function from entering the current directory by returning the special SkipDir value.
