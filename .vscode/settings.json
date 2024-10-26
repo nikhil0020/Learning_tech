@@ -13,5 +13,6 @@
             "database": "student_tracker",
             "username": "springstudent"
         }
-    ]
+    ],
+    "java.compile.nullAnalysis.mode": "automatic"
 }
